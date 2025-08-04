@@ -23,7 +23,6 @@ export default function Home() {
       title: "Project Kickoff",
       description: "Initial planning meeting with stakeholders.",
       attendees: [
-        "Ben"
       ]
     },
     {
@@ -31,7 +30,6 @@ export default function Home() {
       title: "Design Review",
       description: "UI/UX walkthrough and design approval.",
       attendees: [
-        "Ben"
       ]
     },
     {
@@ -39,7 +37,6 @@ export default function Home() {
       title: "Development Phase Starts",
       description: "Initial planning meeting with stakeholders.",
       attendees: [
-        "Ben"
       ]
     },
     {
@@ -47,8 +44,6 @@ export default function Home() {
       title: "Beta Release",
       description: "First round of internal testing.",
       attendees: [
-        "Ben",
-        "Luke"
       ]
     }
   ];
