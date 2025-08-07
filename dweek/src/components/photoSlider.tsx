@@ -26,7 +26,7 @@ export default function PhotoSlider({ photos, sold }: { photos: string[], sold: 
                 {
                     photos.length > 1 &&
                     photos.map((_: string, index: number) => (
-                        <p key={index} onClick={() => setCurrent(index)} className={`size-6 ${index == current ? "bg-yellow-300" : "bg-gray-100"} border-1 rounded-full text-center`}>{index + 1}</p>
+                        <p key={index} onClick={() => setCurrent(index)} className={`hover:cursor-pointer size-6 ${index == current ? "bg-yellow-300" : "bg-gray-100"} border-1 rounded-full text-center`}>{index + 1}</p>
                     ))
                 }
             </div>

@@ -32,8 +32,8 @@ export default function Events({ events }: { events: Event[] }) {
                             })}</p>
                             <h3 className="text-lg font-semibold text-gray-800">{event.title}</h3>
                             {
-                                <div>
-                                    <p className="text-gray-600 mt-1">{event.description}</p>
+                                <div className="flex flex-col max-w-xs sm:max-w-full">
+                                    <p className="text-gray-600 mt-1 text-pretty break-all">{event.description}</p>
                                     <div className="py-1 space-x-2 flex flex-wrap gap-y-1">
                                         {
                                             event.attendees.map((person) => (
