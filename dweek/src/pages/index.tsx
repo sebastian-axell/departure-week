@@ -5,7 +5,6 @@ import Events from "../components/events";
 import JumboTron from "../components/JumboTron";
 import Spinner, { Event, People, Sections, Categories, Item } from "../components/constants";
 import axios from "axios";
-import { stringify } from "querystring";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,59 +21,6 @@ export default function Home() {
   const [events, setEvents] = useState<Event[]>([])
   const [stuff, setStuff] = useState<Item[]>([])
   const [currentSection, setCurrentSection] = useState<Sections>(Sections.event);
-
-
-  // const stuff: Item[] = [
-  //   {
-  //     src: [
-  //       "/images/char.jpg"
-  //     ],
-  //     sold: false,
-  //     heading: "red chair innhhit",
-  //     description: "it's IKEA okay??",
-  //     tags: new Set<Categories>([
-  //       Categories.livingRoom,
-  //       Categories.bedroom
-  //     ])
-  //   },
-  //   {
-  //     src: [
-  //       "/images/char.jpg"
-  //     ],
-  //     sold: false,
-  //     heading: "red chair innhhit",
-  //     description: "it's IKEA okay??",
-  //     tags: new Set<Categories>([
-  //       Categories.livingRoom,
-  //       Categories.bedroom
-  //     ])
-  //   },
-  //   {
-  //     src: [
-  //       "/images/char.jpg",
-  //     ],
-  //     sold: false,
-  //     heading: "red chair innhhit",
-  //     description: "it's IKEA okay??",
-  //     tags: new Set<Categories>([
-  //       Categories.livingRoom,
-  //       Categories.bedroom
-  //     ])
-  //   },
-  //   {
-  //     src: [
-  //       "/images/char.jpg",
-  //       "/images/char.jpg",
-  //     ],
-  //     sold: true,
-  //     heading: "red chair innhhit",
-  //     description: "it's IKEA okay??",
-  //     tags: new Set<Categories>([
-  //       Categories.livingRoom,
-  //       Categories.bedroom
-  //     ])
-  //   },
-  // ]
 
   const parseEvents = (events: Event[]) => {
     return events.map((event): Event => (
@@ -96,10 +42,8 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const env = process.env.ENV;
-      const BASE_URL = env == "local" ? "http://localhost:4040" : process.env.REMOTE_URL;
-      const res_event: Event[] = (await axios.get(BASE_URL + '/events')).data;
-      const res_stuff: Item[] = (await axios.get(BASE_URL + '/stuff')).data;
+      const res_event: Event[] = (await axios.get("https://departure-week-backend.vercel.app" + '/events')).data;
+      const res_stuff: Item[] = (await axios.get("https://departure-week-backend.vercel.app" + '/stuff')).data;
 
       setStuff(parseStuff(res_stuff))
       setEvents(parseEvents(res_event))
