@@ -8,7 +8,7 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
     const [filterTags, setFilterTags] = useState<Set<Categories>>(new Set());
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentThing, setCurrentThing] = useState(stuff[0])
-
+    
     const toggleTag = (tag: Categories) => {
         setFilterTags(prev => {
             const next = new Set(prev);
@@ -26,11 +26,11 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
     }
 
     return (
-        <div className={`pb-10`}>
+        <div className={`pb-20`}>
             <div className="flex justify-around w-full my-3">
                 {
                     Object.values(Categories).map((category) => (
-                        <button onClick={() => toggleTag(category)} className={`rounded-lg p-1.5 bg-gray-200 ${filterTags.has(category) ? "bg-white border-2 border-yellow-300" : "border-2"}`} key={category}>{category}</button>
+                        <button onClick={() => toggleTag(category)} className={`hover:cursor-pointer rounded-lg p-1.5 lg:w-1/4 bg-gray-200 ${filterTags.has(category) ? "bg-white border-2 border-yellow-300" : "border-2"}`} key={category}>{category}</button>
                     ))
                 }
             </div>
@@ -59,7 +59,7 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
                                         <div className="border-2 border-gray-200 bg-white p-1 pt-0 overflow-y-auto rounded-lg min-h-[50px] max-h-[100px]">
                                             {el.description}
                                         </div>
-                                        <button disabled={el.sold} onClick={() => { setIsModalOpen(true); setCurrentThing(el) }} className="disabled:opacity-50 bg-gray-200 text-lg rounded-lg border-2 hover:bg-gray-300">
+                                        <button disabled={el.sold} onClick={() => { setIsModalOpen(true); setCurrentThing(el) }} className="disabled:opacity-50 disabled:cursor-not-allowed cursor-grabbing bg-gray-200 text-lg rounded-lg border-2 hover:bg-gray-300">
                                             {
                                                 el.sold ?
                                                     "taken innit"
