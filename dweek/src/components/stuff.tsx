@@ -56,7 +56,7 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
                                                 })
                                             }
                                         </div>
-                                        <div className="border-2 border-gray-200 bg-white p-1 pt-0 rounded-lg overflow-y-auto min-h-[50px] max-h-[100px]">
+                                        <div className="border-2 border-gray-200 bg-white p-1 pt-0 rounded-lg break-words    overflow-y-auto min-h-[50px] max-h-[100px]">
                                             {el.description}
                                         </div>
                                         <button disabled={el.sold} onClick={() => { setIsModalOpen(true); setCurrentThing(el) }} className="disabled:opacity-50 disabled:cursor-not-allowed cursor-grabbing bg-gray-200 text-lg rounded-lg border-2 hover:bg-gray-300">
