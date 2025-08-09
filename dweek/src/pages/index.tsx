@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Stuff from "../components/stuff";
 import Events from "../components/events";
 import JumboTron from "../components/JumboTron";
-import Spinner, { Event, People, Sections, Categories, Item } from "../components/constants";
+import Spinner, { Event, People, Sections, Categories, Item, BASE_URL } from "../components/constants";
 import axios from "axios";
 
 const geistSans = Geist({
@@ -42,8 +42,8 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res_event: Event[] = (await axios.get("https://departure-week-backend.vercel.app" + '/events')).data;
-      const res_stuff: Item[] = (await axios.get("https://departure-week-backend.vercel.app" + '/stuff')).data;
+      const res_event: Event[] = (await axios.get(BASE_URL + '/events')).data;
+      const res_stuff: Item[] = (await axios.get(BASE_URL + '/stuff')).data;
 
       setStuff(parseStuff(res_stuff))
       setEvents(parseEvents(res_event))

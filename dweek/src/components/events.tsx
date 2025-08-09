@@ -33,7 +33,7 @@ export default function Events({ events }: { events: Event[] }) {
                             <h3 className="text-lg font-semibold text-gray-800">{event.title}</h3>
                             {
                                 <div className="flex flex-col max-w-xs sm:max-w-full">
-                                    <p className="text-gray-600 mt-1 text-pretty break-all">{event.description}</p>
+                                    <p className="text-gray-600 mt-1 break-words flex flex-col gap-y-1 overflow-y-auto min-h-[50px] max-h-[100px] sm:max-h-[300px] whitespace-pre-wrap">{event.description}</p>
                                     <div className="py-1 space-x-2 flex flex-wrap gap-y-1">
                                         {
                                             event.attendees.map((person) => (
