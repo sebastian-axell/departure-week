@@ -18,7 +18,7 @@ export default function Events({ events }: { events: Event[] }) {
     }
 
     return (
-        <div className={`pb-20`}>
+        <div className={`pb-20 max-w-[80vw]`}>
             <div className="relative pl-6 pt-6">
                 <div className="absolute top-0 left-0 w-1 bg-gray-900 h-full rounded"></div>
                 {allEvents.map((event: Event, index: number) => (
