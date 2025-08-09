@@ -54,7 +54,7 @@ export default function EventModal({ handleOnClick: closeModal, currentEvent, se
     };
 
     return (
-        <div className="z-10 h-screen w-screen bg-gray-300/50 flex fixed justify-center items-center top-0 left-0 right-0 font-semibold text-black">
+        <div className="z-10 h-screen w-screen bg-gray-300/50 flex fixed justify-center items-center -top-8 left-0 right-0 font-semibold text-black">
             <div className="p-4 bg-contrast bg-white shadow rounded-lg border-2 border-black w-10/12 sm:w-8/12 h-fit md:w-6/12 lg:w-4/12 max-w-xl relative">
                 <div onClick={() => closeModal()} className="absolute uppercase hover:cursor-pointer right-3 top-0 p-1">x</div>
                 <div className="p-2 flex w-full flex-col gap-y-3 lg:gap-y-5 place-content-center justify-around text-center">
