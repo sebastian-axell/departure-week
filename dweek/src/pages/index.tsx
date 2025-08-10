@@ -55,7 +55,7 @@ export default function Home() {
     <div
       className={`${geistSans.className} ${geistMono.className} overflow-y-auto overflow-x-hidden flex font-sans grid bg-gray-300 grid-rows-[20px_1fr_20px] text-black items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 sm:pt-10`}
     >
-      <main className="flex flex-col w-full h-full max--3xl">
+      <main className="flex flex-col w-full h-full max-w-3xl">
         <JumboTron />
         <div className="flex justify-center bg-gray-200 rounded-lg rounded-b-none w-full space-x-3 p-2">
           <button className={`p-2 hover:cursor-pointer hover:-translate-y-1 hover:bg-gray-400 w-1/2 rounded-lg ${currentSection == Sections.event ? "bg-white border-2 border-yellow-300" : "bg-gray-100"}`} onClick={() => setCurrentSection(Sections.event)}>events</button>
