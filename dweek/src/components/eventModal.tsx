@@ -15,7 +15,8 @@ export default function EventModal({ handleOnClick: closeModal, currentEvent, se
             ...currentEvent,
             attendees: attendees
         }
-        await axios.post(BASE_URL + "/events", currentEvent);
+        const result = await axios.post(BASE_URL + "/events", currentEvent);
+        console.log(result);
         setWait(false);
         setSuccess(true)
         setEvents((prevEvents: Event[]) => [
