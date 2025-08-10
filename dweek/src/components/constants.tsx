@@ -39,7 +39,7 @@ export const BASE_URL = process.env.NEXT_PUBLIC_ENV === "local" ? process.env.NE
 
 export default function Spinner() {
     return (
-        <img src="/denmark.svg" className="mx-auto size-15 w-fit" />
+        <img src="/denmark.svg" className={`animate-spin mx-auto size-12 w-fit`} />
         // <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" version="1.1" className="size-10 mx-auto w-fit" id="Capa_1" width="800px" height="800px" viewBox="0 0 339.813 339.813">
         //     <g>
         //         <g>

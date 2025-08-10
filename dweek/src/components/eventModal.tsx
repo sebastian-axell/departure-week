@@ -15,8 +15,7 @@ export default function EventModal({ handleOnClick: closeModal, currentEvent, se
             ...currentEvent,
             attendees: attendees
         }
-        const result = await axios.post(BASE_URL + "/events", currentEvent);
-        console.log(result);
+        await axios.post(BASE_URL + "/events", currentEvent);
         setWait(false);
         setSuccess(true)
         setEvents((prevEvents: Event[]) => [
@@ -70,20 +69,20 @@ export default function EventModal({ handleOnClick: closeModal, currentEvent, se
                         {
                             (Object.values(People) as People[]).map((person) => (
                                 <button onClick={() => toggleInterestee(person)}
-                                    className={`rounded-lg w-fit mx-auto hover:cursor-pointer px-3 py-1 ${(interestee === person || attendees.indexOf(person) > -1) ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
+                                    className={`rounded-lg w-fit mx-auto hover:cursor-pointer px-2 py-1 ${(interestee === person || attendees.indexOf(person) > -1) ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
                             ))
                         }
                     </div>
                     {
                         wait ?
-                            <div className="animate-spin"><Spinner /></div>
+                            <Spinner />
                             :
                             <button disabled={buttonDisabled} onClick={
                                 () => {
                                     setWait(true);
                                     updateEvent();
                                 }}
-                                className={`${success ? "bg-yellow-300" : ""} px-2 hover:cursor-pointer disabled:cursor-not-allowed py-1 text-xl border-2 w-full mx-auto border-black rounded-xl bg-accent tracking-widest disabled:opacity-50`}>
+                                className={`${success ? "bg-yellow-300" : ""} p-2 hover:cursor-pointer disabled:cursor-not-allowed text-xl border-2 w-full mx-auto border-black rounded-xl bg-accent tracking-widest disabled:opacity-50`}>
                                 {
                                     success ?
                                         "interest sent!"

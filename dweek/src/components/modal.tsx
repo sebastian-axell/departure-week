@@ -9,7 +9,6 @@ export default function Modal({ handleOnClick: closeModal, currentThing }: { han
     const [success, setSuccess] = useState<boolean>(false);
 
     async function sendEmail(currentThing: Item, interestee: People | null) {
-
         await axios.post(BASE_URL + "/email", {
             ...currentThing,
             tags: Array.from(currentThing.tags),
@@ -37,20 +36,20 @@ export default function Modal({ handleOnClick: closeModal, currentThing }: { han
                     <div className="grid grid-cols-3 w-full lg:w-10/12 p-3 gap-3">
                         {
                             (Object.values(People) as People[]).map((person) => (
-                                <button onClick={() => toggleInterestee(person)} className={`hover:cursor-pointer rounded-lg w-fit mx-auto px-3 py-1 ${interestee === person ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
+                                <button onClick={() => toggleInterestee(person)} className={`hover:cursor-pointer rounded-lg w-fit mx-auto px-2 py-1 ${interestee === person ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
                             ))
                         }
                     </div>
                     {
                         wait ?
-                            <div className="animate-spin"><Spinner /></div>
+                            <Spinner />
                             :
                             <button disabled={interestee === null} onClick={
                                 () => {
                                     setWait(true);
                                     sendEmail(currentThing, interestee);
                                 }}
-                                className={`${success ? "bg-yellow-300" : ""} px-2 py-1 text-xl border-2 hover:cursor-pointer w-full mx-auto border-black rounded-xl bg-accent tracking-widest disabled:opacity-50`}>
+                                className={`${success ? "bg-yellow-300" : ""} p-2 text-xl border-2 hover:cursor-pointer w-full mx-auto border-black rounded-xl bg-accent tracking-widest disabled:opacity-50`}>
                                 {
                                     success ?
                                         "interest sent!"

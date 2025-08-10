@@ -26,14 +26,14 @@ export default function Events({ events }: { events: Event[] }) {
                         <div className="absolute left-[-1.8rem] top-1.5 w-3 h-3 bg-yellow-300 rounded-full z-10 border-2 shadow" />
                         <div className="ml-2">
                             <p className="text-sm text-gray-500 font-medium">{new Date(event.date).toLocaleDateString('en-US', {
-                                month: 'short',  // 'Aug'
-                                day: 'numeric',  // '1'
-                                year: 'numeric'  // '2025'
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric'
                             })}</p>
                             <h3 className="text-lg font-semibold text-gray-800">{event.title}</h3>
                             {
                                 <div className="flex flex-col max-w-xs sm:max-w-full">
-                                    <p className="text-gray-600 mt-1 break-words flex flex-col gap-y-1 overflow-y-auto min-h-[50px] max-h-[100px] sm:max-h-[300px] whitespace-pre-wrap">{event.description}</p>
+                                    <p className="text-gray-600 mt-1 break-words flex flex-col gap-y-1 min-h-[50px] max-h-[300px] overflow-y-auto whitespace-pre-wrap">{event.description}</p>
                                     <div className="py-1 space-x-2 flex flex-wrap gap-y-1">
                                         {
                                             event.attendees.map((person) => (
