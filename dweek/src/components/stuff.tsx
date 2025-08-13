@@ -30,7 +30,7 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
             <div className="flex justify-around w-full my-3">
                 {
                     Object.values(Categories).map((category) => (
-                        <button onClick={() => toggleTag(category)} className={`hover:cursor-pointer rounded-lg p-1.5 lg:w-1/4 bg-gray-200 ${filterTags.has(category) ? "bg-white border-2 border-yellow-300" : "border-2"}`} key={category}>{category}</button>
+                        <button onClick={() => toggleTag(category)} className={`hover:cursor-pointer rounded-lg p-1.5 sm:w-1/3 sm:mx-2 bg-gray-200 ${filterTags.has(category) ? "bg-white border-2 border-yellow-300" : "border-2"}`} key={category}>{category}</button>
                     ))
                 }
             </div>
