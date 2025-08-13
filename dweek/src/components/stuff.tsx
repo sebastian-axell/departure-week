@@ -34,7 +34,7 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
                     ))
                 }
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:grid-cols-3">
                 {
                     stuff
                         .filter((el: Item) => {
@@ -43,20 +43,20 @@ export default function Stuff({ stuff }: { stuff: Item[] }) {
                             return [...el.tags].some(tag => filterTags.has(tag))
                         })
                         .map((el: Item, index: number) => (
-                            <div key={el.heading + index} className="pb-2 w-full text-black">
+                            <div key={el.heading + index} className="pb-2 w-full max-w-sm mx-auto text-black">
                                 <div className="flex flex-col">
                                     <PhotoSlider photos={el.src} sold={el.sold} />
                                     <div id="body" className="bg-gray-100 rounded-b-lg p-1 px-2 border-2 flex flex-col space-y-2">
-                                        <p className="text-center text-xl mb-3 mt-1">{el.heading}</p>
-                                        <div className="flex space-x-3">
+                                        <p className="text-center mb-3 mt-1 text-xl sm:min-h-[56px] flex items-center justify-center">{el.heading}</p>
+                                        <div className="flex space-x-3 lg:space-x-2">
                                             {
                                                 [...el.tags].map((tag: Categories) => {
                                                     return (
-                                                        <div key={tag} className="bg-yellow-200 text-sm w-fit px-1 rounded-lg border-1">{tag}</div>)
+                                                        <div key={tag} className="bg-yellow-200 text-sm lg:text-xs w-fit px-1 truncate rounded-lg border-1">{tag}</div>)
                                                 })
                                             }
                                         </div>
-                                        <div className="border-2 border-gray-200 bg-white p-1 pt-0 rounded-lg break-words overflow-y-auto min-h-[50px] max-h-[300px] whitespace-pre-wrap">
+                                        <div className="border-2 border-gray-200 bg-white p-1 pt-0 rounded-lg break-words overflow-y-auto min-h-[50px] max-h-[300px] sm:min-h-[80px] sm:max-h-[80px] whitespace-pre-wrap">
                                             {el.description}
                                         </div>
                                         <button disabled={el.sold} onClick={() => { setIsModalOpen(true); setCurrentThing(el) }} className="disabled:opacity-50 disabled:cursor-not-allowed cursor-grabbing bg-gray-200 text-lg rounded-lg border-2 hover:bg-gray-300">

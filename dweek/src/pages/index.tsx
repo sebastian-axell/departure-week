@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <div
-      className={`${geistSans.className} ${geistMono.className} overflow-y-auto overflow-x-hidden flex font-sans grid bg-gray-300 grid-rows-[20px_1fr_20px] text-black items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 sm:pt-10`}
+      className={`${geistSans.className} ${geistMono.className} overflow-x-hidden flex font-sans grid bg-gray-300 grid-rows-[20px_1fr_20px] text-black items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 sm:pt-10`}
     >
       <main className="flex flex-col w-full h-full max-w-3xl">
         <JumboTron />

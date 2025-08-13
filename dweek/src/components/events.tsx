@@ -37,7 +37,7 @@ export default function Events({ events }: { events: Event[] }) {
                                     <div className="py-1 space-x-2 flex flex-wrap gap-y-1">
                                         {
                                             event.attendees.map((person) => (
-                                                <p key={person} className="bg-yellow-300 rounded-lg px-1 border-2">{person}</p>
+                                                <p key={person} className="bg-yellow-300 rounded-lg px-1 md:px-2 border-2">{person}</p>
                                             ))
                                         }
                                     </div>

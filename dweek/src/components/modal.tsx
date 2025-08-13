@@ -33,10 +33,10 @@ export default function Modal({ handleOnClick: closeModal, currentThing }: { han
                 <div onClick={() => closeModal()} className="absolute uppercase right-3 top-0 p-1 hover:cursor-pointer">x</div>
                 <div className="p-2 flex w-full flex-col gap-y-3 lg:gap-y-5 place-content-center justify-around text-center">
                     <h1 className="text-2xl lg:text-3xl font-bold tracking-tight">{currentThing.heading}</h1>
-                    <div className="grid grid-cols-3 w-full lg:w-10/12 p-3 gap-3">
+                    <div className="grid grid-cols-3 w-full p-3 gap-3">
                         {
                             (Object.values(People) as People[]).map((person) => (
-                                <button onClick={() => toggleInterestee(person)} className={`hover:cursor-pointer rounded-lg w-fit mx-auto px-2 py-1 ${interestee === person ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
+                                <button onClick={() => toggleInterestee(person)} className={`hover:cursor-pointer rounded-lg w-fit sm:w-full mx-auto px-2 sm:px-3 py-1 ${interestee === person ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
                             ))
                         }
                     </div>

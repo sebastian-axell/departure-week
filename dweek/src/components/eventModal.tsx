@@ -65,11 +65,11 @@ export default function EventModal({ handleOnClick: closeModal, currentEvent, se
                             <p className="text-gray-600 mt-1 whitespace-pre-wrap break-words max-h-[400px] overflow-y-auto">{currentEvent.description}</p>
                         </div>
                     }
-                    <div className="grid grid-cols-3 w-full lg:w-10/12 p-3 gap-3">
+                    <div className="grid grid-cols-3 w-full p-3 gap-3">
                         {
                             (Object.values(People) as People[]).map((person) => (
                                 <button onClick={() => toggleInterestee(person)}
-                                    className={`rounded-lg w-fit mx-auto hover:cursor-pointer px-2 py-1 ${(interestee === person || attendees.indexOf(person) > -1) ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
+                                    className={`rounded-lg w-fit sm:w-full mx-auto hover:cursor-pointer px-2 sm:px-3 py-1 ${(interestee === person || attendees.indexOf(person) > -1) ? "bg-yellow-400" : "bg-gray-200"}`} key={person}>{person}</button>
                             ))
                         }
                     </div>

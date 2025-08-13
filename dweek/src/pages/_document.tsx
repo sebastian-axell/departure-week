@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/denmark.svg" />
       </Head>
-      <body className="antialiased">
+      <body className="antialiased overflow-y-hidden">
         <Main />
         <NextScript />
       </body>
