@@ -12,7 +12,7 @@ export default function PhotoSlider({ photos, sold }: { photos: string[], sold: 
                         className={`
                             ${index == current ? "block" : "hidden"}
                             ${sold ? "opacity-50" : ""}
-                            rounded-t-lg w-full bg-accent border-b-0 border-2 border-black max-h-[330.35px]`}
+                            rounded-t-lg w-full bg-accent border-b-0 border-2 border-black sm:max-h-[330.35px]`}
                         src={"/images/" + photo + ".jpg"}
                         key={photo}
                         alt="Description"
